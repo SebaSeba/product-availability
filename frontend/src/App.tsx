@@ -20,25 +20,25 @@ function App() {
   }>({});
   const [selectedProductList, setSelectedProductList] = useState<ProductType>("gloves");
 
-  const fetchProduct = async (type: ProductType) => {
-    const productRes = await fetch(`https://localhost:3001/product/${type}`);
-    const productJson: Product[] = await productRes.json();
+  const fetchProducts = async (type: ProductType) => {
+    const productsRes = await fetch(`https://localhost:3001/products/${type}`);
+    const productsJson: Product[] = await productsRes.json();
 
     setProducts((prevState) => ({
       ...prevState,
-      [type]: productJson
+      [type]: productsJson
     }));
   }
 
   const handleProductLinkClick = (type: ProductType) => {
     if (!products[type]) {
-      fetchProduct(type);
+      fetchProducts(type);
     }
     setSelectedProductList(type);
   }
 
   useEffect(() => {
-    fetchProduct("gloves");
+    fetchProducts("gloves");
   }, []);
 
   return (
