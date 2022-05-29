@@ -1,0 +1,25 @@
+.App {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.content {
+    display: flex;
+    padding: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.product-link {
+    cursor: pointer;
+}
+
+.selected-product-list {
+    font-weight: 700;
+    text-decoration: underline;
+}
